@@ -59,7 +59,7 @@ if [ $(($NETWORK_3 + $END_INDEX * 4 / 0x100)) -gt $((0xFF)) ]; then
 fi
 
 for i in $(seq $START_INDEX $END_INDEX); do
-	client_name="${NAME}${i}"
+	client_name="${NAME}$(printf %02d ${i})"
 
 	if [ -e "$CCD_PATH/$client_name" ]; then
 		echo "Already $client_name user exist."

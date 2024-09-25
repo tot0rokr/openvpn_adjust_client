@@ -50,7 +50,7 @@ fi
 
 
 for i in $(seq $START_INDEX $END_INDEX); do
-	client_name="${NAME}${i}"
+	client_name="${NAME}$(printf %02d ${i})"
 
 	if [ -e "$CCD_PATH/$client_name" ]; then
 		rm "$CCD_PATH/$client_name"
